@@ -3,9 +3,14 @@ class ApplicationController < Sinatra::Base
 	get'/' do
 		erb :index
 	end	
-	post'/gossip/new' do
-		puts "Ce programme ne fait rien pour le moment"
+
+	get'/gossips/new' do
 		erb :new_gossip
-		 Gossip.new.save
+		 
 	end
+
+	post '/gossips/new/' do
+		Gossip.new(params["gossip_author"],params["gossip_content"]).save
+		redirect '/'
+  end
 end
