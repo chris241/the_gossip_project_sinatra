@@ -3,18 +3,31 @@
     <title>Créer un potin</title>
     <meta charset="utf-8">
     <style type="text/css">
-    	input {
-    		margin-bottom: 5px;
+    	.text-center{
+    	background-color: #FFEBCD;
+    	}
+    	.gossip_author {
+    	 margin-bottom: 5px;
+    	 margin-left : 5px;
     	}	
+    	.gossip_content{
+    	 margin-bottom: 5px;
+    	 margin-left : 5px;
+    	}	
+    	.btn {
+    		margin-top: 5px;
+    	}
+    	
     </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+   <body class="text-center">
     <h1>Crée un potin !</h1>
     <p>Balance ton potin via le formulaire ci-dessous</p>
     <form action='/gossips/new/' method='POST'>
-      Saisi ici ton nom :  <input type='text' name='gossip_author'/><br/>
-      Balance ton potin : <input type='text' name='gossip_content'/><br/>
-      <input type='submit'/>
+      Saisi ici ton nom :  <input type='text' class="gossip_author"name='gossip_author'/><br/>
+      Balance ton potin : <input type='text'classe ="gossip_content" name='gossip_content'/><br/>
+     <button type="submit" class="btn btn-primary">Valider</button>
     </form>
   </body>
 </html>
