@@ -1,7 +1,7 @@
 require 'pry'
 require 'csv'
 class Gossip
-	attr_accessor :author, :content
+	attr_accessor :author, :content 
 	def initialize(author,content)
 		@author, @content = author,content
 	end
@@ -17,5 +17,7 @@ class Gossip
   			end
   		return all_gossips
 	end
+	def self.find(id)
+		Gossip.all[id.to_i]
+	end
 end
-#binding.pry

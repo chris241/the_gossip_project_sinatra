@@ -12,12 +12,11 @@
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
     <a href="/gossips/new">aller créer un nouveau potin.</a>
-    <% gossips.each do |gossip| %>
+    <% gossips.each_with_index do |gossip , index| %>
         <p>
-          <%= gossip.author %><br/>
+          <%= gossip.author %>   <a href="/gossips/<%= index %>">show</a><br/>
           <%= gossip.content %>
         </p>
       <% end %>
-  
   </body>
 </html>
