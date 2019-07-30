@@ -9,11 +9,15 @@
       }
     </style>
   </head>
-<body>
+<body><nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">Accueil</a>
+</nav>
+
   <h1> PAGE POTIN</h1>
-  <h3>Voici la page du potin n°<%= params[:id]%></h3>
-  <p>Son auteur :<%= gossip.author %><br>
-  Le contenu du potin :<%= gossip.content %></p>
-  <a href="/">Lien pour revenir à la page des potins</a>
+  <ol>
+  <h2>Voici la page du potin n°<%= params[:id]%></h2>
+  <p>Son auteur :<strong><%= gossip.author %></strong><br>
+  Le contenu du potin :<strong><%= gossip.content %></strong></p>
+</ol>
 </body>
 </html>
