@@ -17,5 +17,17 @@ class ApplicationController < Sinatra::Base
  		#{}"hello #{params['id']}"
  		erb :show, locals: {gossip: Gossip.find(params[:id])}
 	end
+		 # allows editing with the formual edit.erb
+
+  	get '/gossips/:id/edit' do
+    	erb :edit, locals: {id: params['id'].to_i, gossips:Gossip.find(params['id'].to_i)}
+ 	 end
+
+
+  # retrieve the entry in the form to update the gossip
+
+	  post '/gossips/edit/' do
+    Gossip.update(params['id'].to_i,params["gossip_author"], params["gossip_content"])
+    redirect '/' end
 
 end

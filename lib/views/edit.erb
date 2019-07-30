@@ -1,0 +1,41 @@
+<html>
+
+  <head>
+
+  	<title>Editer un potin</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <style type="text/css">
+      body{
+        background-color: #FFEBCD;
+      }
+      input {
+        margin-left: 5px;
+        margin-top: 
+      }
+    </style>
+  </head>
+
+<body>
+    <h1>Editer un potin !</h1>
+    <br/> 
+    <p>Met à jour le potin <%= id%> via le formulaire ci-dessous</p>  
+    <form style= "position: center" action='/gossips/edit/' method='POST'> 
+      <div class="form-group ">
+          <label for="modifierNom">Modifie le nom :</label> 
+          <input type='text' name='gossip_author' value="<%= gossips.author %>" />
+      </div>
+      <div class="form-group row">
+             <label for="modifierNom"> Balance ton potin :</label>  <input type='text' name='gossip_content' value="<%= gossips.content %>" /><br/> 
+      </div>
+  
+        <input type='hidden' name='id' value='<%= id %>'/>
+         <button type="submit" class="btn btn-warning">Modifier</button>
+	<button type="button" class="btn btn-info"onclick="document.location.href='/'">Affiche potins</button>
+	<button type="button" class="btn btn-primary"onclick="document.location.href='/gossips/new'">Créer un potin </button>
+
+  </form> 
+  </body>
+</html>
+
+

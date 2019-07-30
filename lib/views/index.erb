@@ -7,16 +7,35 @@
     	body{
     		background-color: #FFEBCD;
     	}
+    	a{
+    		color:white;
+    	}
+    	button {
+    		margin-left: 5px;
+    		text-decoration: none;
+    	}
     </style>
   </head>
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
-    <a href="/gossips/new">aller créer un nouveau potin.</a>
+
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      	<a class="navbar-brand" href="/">Accueil</a>
+  		<a class="navbar-brand" href="/gossips/new">Créer un potin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
     <% gossips.each_with_index do |gossip , index| %>
-        <p>
-          <%= gossip.author %>   <a href="/gossips/<%= index %>">show</a><br/>
-          <%= gossip.content %>
-        </p>
+          <h1 class="display-5"> <%= gossip.author %> </h1> 
+          <p class="lead">
+          <%= gossip.content %> <br></p>
+          </div>
+        <a href="/gossips/<%= index %>"class="btn btn-primary btn-lg">show</a>
+		<a href="/gossips/<%= index %>/edit"class="btn btn-warning">Editer</a>
       <% end %>
+
+
   </body>
 </html>
+
