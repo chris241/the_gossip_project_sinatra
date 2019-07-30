@@ -25,22 +25,22 @@ class Gossip
 	end
 
 	def self.update(id, author, content) #methode to edit the gossip
-        gossips = []
-        CSV.read("./db/gossip.csv").each_with_index do |row, index|
-        if id.to_i == (index)
+        	gossips = []
+        	CSV.read("./db/gossip.csv").each_with_index do |row, index|
+        	if id.to_i == (index)
 
-            gossips << [author, content]
-        else 
-            gossips << [row[0], row[1]]
-        end
-   end
+            	gossips << [author, content]
+        	else 
+           	 gossips << [row[0], row[1]]
+        	end
+   		end
 	CSV.open("./db/gossip.csv", "w") do |csv|
 
         gossips.each do |row|
 
             csv << row
 
-       end
-    end
-end
+       		end
+    	end
+	end
 end
